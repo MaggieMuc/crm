@@ -38,6 +38,8 @@ public class PersonResource {
             entity.setSalutation(person.getSalutation());
             entity.setFirstName(person.getFirstName());
             entity.setLastName(person.getLastName());
+            entity.setCategory(person.getCategory());
+            entity.setPhone(person.getPhone());
         }
         return entity;
     }
