@@ -1,0 +1,14 @@
+quarkus:
+  http:
+    proxy:
+      proxy-address-forwarding: true
+  datasource:
+    db-kind: mariadb
+    username: mvendl
+    password: m-mv2707
+    jdbc:
+      url: jdbc:mariadb://localhost:3306/maggie
+  hibernate-orm:
+    database:
+      generation: update
+    log: true
