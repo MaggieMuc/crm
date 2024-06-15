@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 public class Person extends PanacheEntityBase {
 
@@ -30,13 +32,17 @@ public class Person extends PanacheEntityBase {
     String lastName;
 
     @NotNull
-    @Size(max = 50)
-    @Column(length = 50)
-    String category;
+    @ManyToOne
+    @JoinColumn(name = "category")
+    Category category;
 
     @NotNull
     @Size(max = 20)
     @Column(length = 20)
     String phone;
 
+    @NotNull
+    @Size(max = 20)
+    @Column(length = 20)
+    String email;
 }
